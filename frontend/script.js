@@ -12,7 +12,8 @@ function sendQuestion() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 const data = JSON.parse(xhr.responseText);
-                const answer = data.answer[0].text || "No answer provided.";
+                console.log(data.answer);
+                const answer = data.answer || "No answer provided.";
 
 
                 appendMessage("You", question);
